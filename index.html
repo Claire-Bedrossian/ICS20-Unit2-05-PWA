@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<!--- ICS2O-My first PWA --->
+<!--- ICS2O-Salary Program with JS --->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="XXX" />
+    <meta name="description" content="Salary program with JS" />
     <meta name="keywords" content="mths, ics2o" />
     <meta name="author" content=".Claire Bedrossian" />
     <meta name="theme-color" content="#FFFFFF" />
-    <title>XXX</title>
+    <title>Salary Program with JS</title>
     <link
       rel="canonical"
-      href="https://Claire-Bedrossian.github.io/ICS2O-PWA-Test/"
+      href="https://Claire-Bedrossian.github.io/ICS20-Unit2-05-PWA/"
     />
     <link rel="manifest" href="/ICS2O-PWA-Test/manifest.webmanifest" />
     <link rel="stylesheet" href="./css/styles.css" />
@@ -45,35 +45,64 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   </head>
-  <title>XXX</title>
+  <title>Salary Program with JS</title>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">XXX</span>
+          <span class="mdl-layout-title">Salary Program with JS</span>
         </div>
       </header>
       <main class="mdl-layout__content">
-        <p></p>
-        <img
-          src="./images/notebook-animation.svg"
-          alt="Computer"
-          width="25%"
-          height="25%"
-        />
-        <p></p>
-        <!-- Raised button with ripple -->
+        <h5>Input your information below...</h5>
+        <br />
+        <!-- number textfeild -->
+        <p>Number of hours worked</p>
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="hours-worked"
+            />
+            <label class="mdl-textfield__label" for="hours-worked"
+              >Hours here ...</label
+            >
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+        <!-- number textfeild -->
+        <p>Hourly Pay Rate</p>
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="hourly-pay"
+            />
+            <label class="mdl-textfield__label" for="hourly-pay"
+              >Pay rate here ...</label
+            >
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
         <button
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
           onclick="myButtonClicked()"
         >
-          Say "Hello, World!"
+          Calculate
         </button>
-        <!-- basic text -->
-        <p></p>
-        <div id="hello-world"></div>
+        <div id="answers">
+          <div id="grossPay"></div>
+          <br />
+          <div id="deductions"></div>
+          <br />
+          <div id="afterDeductions"></div>
+        </div>
       </main>
     </div>
   </body>
